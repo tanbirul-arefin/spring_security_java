@@ -9,10 +9,10 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 public class mainController {
 
-//    @GetMapping("/login")
-//    public String loginPage(){
-//        return "login-page";
-//    }
+    @GetMapping( "/login")
+    public String loginPage(){
+        return "login-page";
+    }
 
 
     @GetMapping("/protected")

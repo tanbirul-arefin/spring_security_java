@@ -1,25 +1,27 @@
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Login Page</title>
+    <link rel="stylesheet" th:href="@{/css/login.css}">
 </head>
 <body>
+<div class="container">
+    <h1>Login Page</h1>
 
-<h1>login page</h1>
+    <p th:if="${warning}" th:text="${warning}"></p>
 
-<p th:if="${warring}" th:text="${warring}"></p>
+    <form th:action="@{/login}" method="post">
+        <label for="username">Enter Username</label>
+        <input type="text" id="username" name="username" required />
 
-<form th:action="@{/login}" method="post">
+        <label for="password">Enter Password</label>
+        <input type="password" id="password" name="password" required />
 
-    <label for="username">Enter the name</label>
-    <input type="text" id="username" name="username" />
-
-    <label for="password">Enter the password</label>
-    <input type="password"  id="password" name="password"/>
-
-    <button type="submit">Login here</button>
-</form>
+        <button type="submit">Login</button>
+    </form>
+</div>
 
 </body>
 </html>
