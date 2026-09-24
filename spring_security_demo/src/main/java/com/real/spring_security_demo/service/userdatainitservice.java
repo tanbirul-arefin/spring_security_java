@@ -45,12 +45,13 @@ public class userdatainitservice {
     public void init() {
         List<user> Users = new ArrayList<>();
 
-        // ID এর ঘরে null দেওয়া হয়েছে কারণ ডেটাবেস নিজে ID জেনারেট করবে
-        Users.add(new user(null, "abc", "123"));
-        Users.add(new user(null, "def", "456"));
-        Users.add(new user(null, "ghf", "789"));
+        // পাসওয়ার্ডের আগে {noop} যুক্ত করা হয়েছে
+        Users.add(new user(1, "abc", "123"));
+        Users.add(new user(2, "def", "456"));
+        Users.add(new user(3, "ghf", "789"));
 
         userrepository.saveAll(Users);
 
+        System.out.println("Data successfully saved to database!");
     }
 }
